@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquête</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .message {
+            font-size: 20px;
+            margin-top: 20px;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Entrez le code à 4 chiffres</h1>
+    <input type="text" id="codeInput" maxlength="4" placeholder="Code">
+    <br>
+    <button onclick="checkCode()">Valider</button>
+
+    <div class="message" id="successMessage">
+        Le prochain indice se trouve sur le policier…
+    </div>
+
+    <script>
+        function checkCode() {
+            var userCode = document.getElementById("codeInput").value;
+            var correctCode = "2018";
+
+            // On vérifie si le code correspond à "2018"
+            if (userCode === correctCode) {
+                // Si le code est correct, on affiche le message
+                document.getElementById("successMessage").style.display = "block";
+            } else {
+                // Si le code est incorrect, on affiche une alerte
+                alert("Code incorrect, veuillez réessayer.");
+            }
+        }
+    </script>
+
+</body>
+</html>
